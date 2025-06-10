@@ -1,76 +1,82 @@
+/* Global Styles for All Pages */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    background-image: url('IMG_4152.png'); /* Make sure this image is in the same folder as index.html */
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
-nav {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.welcome-text {
+/* Page Titles */
+h1, h2, h3 {
     text-align: center;
-    margin-top: 20%;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px #000000;
 }
 
-.button {
-    background-color: teal;
+/* Menu and Cart Layout */
+#menu, #cart {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black for contrast */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #ff9800;
+    border: none;
     color: white;
     padding: 10px 20px;
-    text-decoration: none;
+    margin: 5px;
     border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.homepage {
-    background-image: url('images/IMG_4152.png');
+button:hover {
+    background-color: #e68900;
+    transform: scale(1.05);
 }
 
-.menu-page {
-    background-image: url('images/IMG_4152.png');
-}
-/* Cart Swipe Animation */
-.cart-icon.cart-swipe {
-    animation: swipe 0.5s forwards;
+/* Cart Animation (Cart Tick Effect) */
+.cart-animation {
+    animation: cartSwipe 0.8s ease forwards;
 }
 
-@keyframes swipe {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(50px); }
-    100% { transform: translateX(0); }
+@keyframes cartSwipe {
+    0% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; background-color: #4CAF50; }
 }
 
-/* Popup Styling */
-.go-to-cart-popup {
+/* Popup for "Go to Cart" */
+.popup {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #222;
+    background-color: #2196F3;
     color: white;
-    padding: 15px;
-    border-radius: 8px;
-    z-index: 999;
-}
-
-.go-to-cart-popup button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background: #00b894;
-    border: none;
-    color: white;
+    padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
+    display: none;
+    z-index: 9999;
+    animation: popupFade 0.3s ease-in-out;
+}
+
+@keyframes popupFade {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Sound Feedback Visual (optional glow) */
+.sound-click {
+    box-shadow: 0 0 15px #fff;
 }

@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.welcome-text {
+    text-align: center;
+    margin-top: 20%;
+}
+
+.button {
+    background-color: teal;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.homepage {
+    background-image: url('images/IMG_4152.png');
+}
+
+.menu-page {
+    background-image: url('images/IMG_4152.png');
+}
+/* Cart Swipe Animation */
+.cart-icon.cart-swipe {
+    animation: swipe 0.5s forwards;
+}
+
+@keyframes swipe {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+/* Popup Styling */
+.go-to-cart-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+}
+
+.go-to-cart-popup button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #00b894;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
